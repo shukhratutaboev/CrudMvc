@@ -1,0 +1,19 @@
+@model AuthorCreateOrUpdateViewModel
+
+<form method="post">
+    <div class="border p-3 mt-4">
+		<div class="row pb-2">
+			<h2 class="text-primary">@(Model.IsCreating ? "Add" : "Update") Author</h2>
+			<hr />
+		</div>
+		<div class="mb-3">
+			<label asp-for="FullName"></label>
+			<input asp-for="FullName" class="form-control" />
+			<span asp-validation-for="FullName" class="text-danger"></span>
+		</div>
+		<button type="submit" class="btn btn-primary" style="width:150px">@(Model.IsCreating ? "Add" : "Update")</button>
+		<a asp-controller="Author" asp-action="List" class="btn btn-secondary" style="width:150px">
+			Back to List
+		</a>
+	</div>
+</form>
